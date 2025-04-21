@@ -1,5 +1,11 @@
 
+<p align="center">
+  <img src="https://github.com/NARAHARISETTYVINAY/Vacation-Booking-Website/blob/main/banner.png?raw=true" alt="Pack Your Bags Banner" width="100%">
+</p>
+
+
 🎒 Pack Your Bags — Vacation Booking Website 🌍
+
 Your one-stop destination for planning dream getaways with ease.
 
 
