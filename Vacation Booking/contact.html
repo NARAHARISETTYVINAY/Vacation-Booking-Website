@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | Pack Your Bags</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: calibri, sans-serif;
+      text-align: center;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 80px;
+      color: whitesmoke;
+    }
+
+    p {
+      font-size: 25px;
+      color: gray;
+    }
+
+    header {
+      background: linear-gradient(45deg, teal, lightseagreen);
+      padding: 25px;
+    }
+
+    nav {
+      background-color: lightgray;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 10px 25px;
+      display: inline-block;
+      font-size: 18px;
+      color: black;
+    }
+
+    nav a:hover {
+      background-color: lightseagreen;
+      color: whitesmoke;
+    }
+
+    .main-footer {
+      background-color: gray;
+      color: whitesmoke;
+      padding: 20px;
+    }
+
+    .contact-section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .contact-section h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #1976D2;
+    }
+
+    .contact-section p {
+      text-align: center;
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .contact-form, .contact-info {
+      flex: 1 1 400px;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+    }
+
+    form button {
+      background-color: gray;
+      color: whitesmoke;
+      border: none;
+      padding: 12px 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: lightseagreen;
+    }
+
+    .contact-info h3 {
+      margin-top: 0;
+      color: #2196F3;
+      text-align: center;
+    }
+
+    .contact-info .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .contact-info .info-item strong {
+      margin-right: 10px;
+      color: #1976D2;
+    }
+
+    .contact-info .info-item span {
+      font-size: 1em;
+      color: #333;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: #1976D2;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Popup styles */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .popup-box h2 {
+      color: teal;
+      margin-bottom: 15px;
+    }
+
+    .popup-box p {
+      color: #555;
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+
+    .popup-box button {
+      background-color: lightseagreen;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup-box button:hover {
+      background-color: teal;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Pack Your Bags</h1>
+</header>
+
+<nav>
+  <a href="home.html">Home</a>
+  <a href="places.html">Places</a>
+  <a href="packages.html">Packages</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="contact-section">
+  <h2>Get in Touch</h2>
+  <p>Have questions, suggestions, or ready to book your next adventure? Reach out to us!</p>
+
+  <div class="contact-container">
+    <div class="contact-form">
+      <form id="contact-form" action="#" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <h3>Contact Information</h3><br><br><br>
+      <div class="info-item"><strong>Email:</strong><span>support@packyourbags.com</span></div>
+      <div class="info-item"><strong>Phone:</strong><span>+91 9502449719</span></div>
+      <div class="info-item"><strong>Address:</strong><span>AICTE Idea Lab, Bhimavaram, India</span></div><br><br>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/vinay-naraharisetty-298677325" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/hey_vinni__/" target="_blank">Instagram</a>
+        <a href="https://x.com/Vinay_OnX" target="_blank">Twitter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <h4>vacation-booking @ 2023</h4>
+  <span>All Rights Reserved</span><br>
+  <span>Developed By Vinay Naraharisetty @ AICTE Idea Lab</span>
+</footer>
+
+<!-- Dynamic Popup Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+
+      const popup = document.createElement("div");
+      popup.className = "popup-overlay";
+      popup.innerHTML = `
+        <div class="popup-box">
+          <h2>Thank You, ${name}!</h2>
+          <p>Your message:<br>"${message}"<br>has been sent successfully.</p>
+          <button onclick="document.body.removeChild(this.parentElement.parentElement)">Close</button>
+        </div>
+      `;
+
+      document.body.appendChild(popup);
+      form.reset();
+    });
+  });
+</script>
+
+</body>
+</html>

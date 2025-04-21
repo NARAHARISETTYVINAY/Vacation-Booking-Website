@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pack Your Bags | Booking</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #success-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #42833A;
+      color: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      font-size: 18px;
+      text-align: center;
+      z-index: 999;
+    }
+
+    #success-popup button {
+      margin-top: 15px;
+      background-color: white;
+      color: #42833A;
+      border: none;
+      padding: 8px 16px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #success-popup button:hover {
+      background-color: #e1e1e1;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+    }
+
+    td {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    input[type="text"], input[type="number"], input[type="location"], input[type="amount"], select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: #42833A;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #365c28;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>pack your bags</h1>
+  </header>
+
+  <form id="Booking-form">
+    <table>
+      <tr>
+        <td><label for="username">NAME:</label></td>
+        <td><input type="text" id="username" name="username" placeholder="Enter your name" required></td>
+      </tr>
+      <tr>
+        <td><label for="number">MOBILE NUMBER:</label></td>
+        <td><input type="number" id="number" name="number" placeholder="Enter your number" required></td>
+      </tr>
+      <tr>
+        <td><label for="location">ADD LOCATION:</label></td>
+        <td><input type="text" id="location" name="location" placeholder="Enter location" required></td>
+      </tr>
+      <tr>
+        <td><label for="tickets">NUMBER OF TICKETS:</label></td>
+        <td><input type="number" id="tickets" name="tickets" placeholder="Number of tickets" required></td>
+      </tr>
+      <tr>
+        <td><label for="package">ADD PACKAGE:</label></td>
+        <td>
+          <select id="package" name="package" required>
+            <option value="" disabled selected>Select a package</option>
+            <option value="Hyderabad">Hyderabad - ₹30,000</option>
+            <option value="Kerala">Kerala - ₹40,000</option>
+            <option value="Delhi">Delhi - ₹50,000</option>
+            <option value="Uttar Pradesh">Uttar Pradesh - ₹50,000</option>
+            <option value="Goa">Goa - ₹70,000</option>
+            <option value="Amazon">Amazon Forest - ₹80,000</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" value="Submit"></td>
+      </tr>
+    </table>
+  </form>
+
+  <div id="success-popup">
+    <p id="popup-message">Booking Successful!</p>
+    <button onclick="location.reload()">OK</button>
+  </div>
+
+  <script>
+    document.getElementById("Booking-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const tickets = document.getElementById("tickets").value;
+      const selectedPackage = document.getElementById("package").value;
+
+      const prices = {
+        "Hyderabad": 30000,
+        "Kerala": 40000,
+        "Delhi": 50000,
+        "Uttar Pradesh": 50000,
+        "Goa": 70000,
+        "Amazon": 80000
+      };
+
+      const totalPrice = prices[selectedPackage] * tickets;
+
+      const popupMessage = `
+        <strong>Booking Successful!</strong><br>
+        Thank you, <strong>${username}</strong>!<br>
+        You booked <strong>${tickets}</strong> ticket(s) to <strong>${selectedPackage}</strong>.<br>
+        Total Price: <strong>₹${totalPrice.toLocaleString()}</strong><br>
+        <br>
+        <button onclick="location.reload()">OK</button>
+      `;
+
+      document.getElementById("success-popup").innerHTML = popupMessage;
+      document.getElementById("success-popup").style.display = "block";
+    });
+  </script>
+</body>
+</html>
