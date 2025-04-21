@@ -14,12 +14,12 @@ Your one-stop destination for planning dream getaways with ease.
 
 📌 Features :
 
-🌐 Multi-page travel booking site
+ * 🌐 Multi-page travel booking site
 
-🎨 Modern UI with clean animations
+ * 🎨 Modern UI with clean animations
 
-🛫 Dynamic package selection and booking
+ * 🛫 Dynamic package selection and booking
 
-🧭 Real destinations with image galleries
+ * 🧭 Real destinations with image galleries
 
-📞 Contact form
+ * 📞 Contact form
